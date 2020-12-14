@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Sudoku Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/csscode.css">
+    <script defer src="js/javascriptcode.js"></script>
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<nav class="navbar">Sudoku Solver</nav>
+	</header>
+	<!-- Game Setup or setup-game-->
+    <div id = "game-setup">
+        <!-- difficulty level -->
+        <div id = "difficulty">
+            <h5>Select Difficulty Level: </h5>
+            <label>
+            	<input id = "diff-1" type = "radio" name="difficulty" value="easy" checked>Easy
+            </label>
+            <label>
+            	<input id = "diff-2" type="radio" name="difficulty" value="medium">Medium
+            </label>
+            <label>
+            	<input id = "diff-3" type="radio" name="difficulty" value="hard">Hard
+        	</label>
+        </div>
+        <!-- time limit -->
+        <div id = "time">
+            <h5>Time Limit: </h5>
+            <label>
+            	<input id = "time-1" type="radio" name="time" value="three" checked>3 Min
+            </label>
+            <label>
+            	<input id = "time-2" type="radio" name="time" value="five">5 Min
+            </label>
+            <label>
+            	<input id = "time-3" type="radio" name="time" value="ten">10 Min
+            </label>    
+        </div>
+        <!-- theme -->
+        <div id = "theme">
+            <h5>Choose Theme: </h5>    
+            <label>
+            	<input id = "theme-1" type="radio" name="theme" value="light" checked>Light
+            </label>
+            <label>
+ 	        	<input id = "theme-2" type="radio" name="theme" value="dark">Dark
+ 	        </label>
+        </div>
+        
+    </div>
+    <!-- <button id = "create-btn">New Game</button> -->
+
+    <br>
+    <!-- Stats -->
+    <div id = "stats">
+    	<p id = "lives"></p>
+    	<p id = "timer"></p>    	
+    </div>
+    <br>
+
+    <!-- Board + umbers -->
+    <div id ="main">
+    <div id="container">
+
+        <div class="lsb tsb" id="0">
+
+        </div>
+
+        <div class="tsb ldb" id="1">
+
+        </div>
+
+        <div class="tsb ldb" id="2">
+
+        </div>
+
+        <div class="tsb lsb" id="3">
+
+        </div>
+        <div class="tsb ldb" id="4">
+
+        </div>
+
+        <div class="tsb ldb" id="5">
+
+        </div>
+        <div class="tsb lsb" id="6">
+
+        </div>
+
+        <div class="tsb ldb" id="7">
+
+        </div>
+        <div class="tsb rsb ldb" id="8">
+
+        </div>
+
+        <div class="lsb tdb" id="9">
+
+        </div>
+
+        <div class="ldb tdb" id="10">
+
+        </div>
+
+        <div class="ldb tdb" id="11">
+
+        </div>
+
+        <div class="lsb tdb" id="12">
+
+        </div>
+        <div class="ldb tdb" id="13">
+
+        </div>
+
+        <div class="ldb tdb" id="14">
+
+        </div>
+        <div class="lsb tdb" id="15">
+
+        </div>
+
+        <div class="ldb tdb" id="16">
+
+        </div>
+        <div class="rsb ldb tdb" id="17">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="18">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="19">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="20">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="21">
+
+        </div>
+        <div class="bsb ldb tdb" id="22">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="23">
+
+        </div>
+        <div class="bsb lsb tdb" id="24">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="25">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="26">
+
+        </div>
+
+        <div class="lsb" id="27">
+
+        </div>
+
+        <div class="ldb" id="28">
+
+        </div>
+
+        <div class="ldb" id="29">
+
+        </div>
+
+        <div class="lsb" id="30">
+
+        </div>
+        <div class="ldb" id="31">
+
+        </div>
+
+        <div class="ldb" id="32">
+
+        </div>
+        <div class="lsb" id="33">
+
+        </div>
+
+        <div class="ldb" id="34">
+
+        </div>
+        <div class="rsb ldb" id="35">
+
+        </div>
+
+        <div class="lsb tdb" id="36">
+
+        </div>
+
+        <div class="ldb tdb" id="37">
+
+        </div>
+
+        <div class="ldb tdb" id="38">
+        </div>
+
+        <div class="lsb tdb" id="39">
+
+        </div>
+        <div class="ldb tdb" id="40">
+
+        </div>
+
+        <div class="ldb tdb" id="41">
+
+        </div>
+        <div class="lsb tdb" id="42">
+
+        </div>
+
+        <div class="ldb tdb" id="43">
+
+        </div>
+        <div class="rsb ldb tdb" id="44">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="45">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="46">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="47">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="48">
+
+        </div>
+        <div class="bsb ldb tdb" id="49">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="50">
+
+        </div>
+        <div class="bsb lsb tdb" id="51">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="52">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="53">
+
+        </div>
+
+        <div class="lsb" id="54">
+
+        </div>
+
+        <div class="ldb" id="55">
+
+        </div>
+
+        <div class="ldb" id="56">
+
+        </div>
+
+        <div class="lsb" id="57">
+
+        </div>
+        <div class="ldb" id="58">
+
+        </div class="ldb">
+
+        <div class="ldb" id="59">
+
+        </div>
+        <div class="lsb" id="60">
+
+        </div>
+
+        <div class="ldb" id="61">
+
+        </div>
+        <div class="rsb ldb" id="62">
+
+        </div>
+
+        <div class="lsb tdb" id="63">
+
+        </div>
+
+        <div class="ldb tdb" id="64">
+
+        </div>
+
+        <div class="ldb tdb" id="65">
+
+        </div>
+
+        <div class="lsb tdb" id="66">
+
+        </div>
+        <div class="ldb tdb" id="67">
+
+        </div>
+
+        <div class="ldb tdb" id="68">
+
+        </div>
+        <div class="lsb tdb" id="69">
+
+        </div>
+
+        <div class="ldb tdb" id="70">
+
+        </div>
+        <div class="rsb ldb tdb" id="71">
+
+        </div>
+
+        <div class="lsb bsb tdb" id="72">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="73">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="74">
+
+        </div>
+
+        <div class="bsb lsb tdb" id="75">
+
+        </div>
+        <div class="bsb ldb tdb" id="76">
+
+        </div>
+
+        <div class="bsb tdb ldb" id="77">
+
+        </div>
+        <div class="bsb lsb tdb" id="78">
+
+        </div>
+
+        <div class="bsb ldb tdb" id="79">
+
+        </div>
+        <div class="bsb rsb ldb tdb" id="80">
+
+        </div>
+
+    </div>
+
+    <!-- Input numbers -->
+    <div id = "numbers" class="hidden">
+    	<p id = "one">1</p>
+    	<p id = "two">2</p>
+    	<p id = "three">3</p>
+    	<p id = "four">4</p>
+    	<p id = "five">5</p>
+    	<p id = "six">6</p>
+    	<p id = "seven">7</p>
+    	<p id = "eight">8</p>
+    	<p id = "nine">9</p>   	
+    </div>
+
+	</div>	<!-- main-div -->
+    <br>
+    <div id="buttons" style="margin-bottom: 30px;">
+        <button type="button" class="btn btn-danger" id="generate-sudoku">Get New
+            Puzzle</button><!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+        <button type="button" class="btn btn-success" id="solve">Solve by own</button>
+    </div>
+    <footer>
+    	<div id = "footertext">©<a href="https://www.linkedin.com/in/anubhav-srivastava-a8429617b/"  target="_blank"> Anubhav Srivastava</a></div>
+	</footer>
+</body>
+
+
+</html>
